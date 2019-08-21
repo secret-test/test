@@ -9,7 +9,7 @@ pipeline:
     image: frolvlad/alpine-python3
     when:
       event: [push]
-  docker build push:
+  docker_build_push:
     image: plugins/docker
     repo: chashruti/drone1.0/drone-test
     #registry: https://cloud.docker.com
