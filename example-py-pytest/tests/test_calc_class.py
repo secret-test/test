@@ -1,3 +1,8 @@
+import os, sys, json
+from pathlib import Path
+root = str(Path(__file__).resolve().parents[1])
+sys.path.append(root)
+
 """
 test_calc_class.py contains pytest tests for the Calculator class.
 pytest discovers tests named "test_*".
