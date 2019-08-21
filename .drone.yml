@@ -13,7 +13,7 @@ pipeline:
     #registry: https://cloud.docker.com
     tags:
       - latest
-    #secrets: [ docker_username, docker_password ]
+    secrets: [ docker_username, docker_password ]
     when:
       event: [push]  
   
