@@ -9,11 +9,16 @@ pipeline:
     image: frolvlad/alpine-python3
   docker build push:
     image: plugins/docker
-    repo: chashruti/drone1.0
+    settings:
+      repo: chashruti/drone1.0
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
     #registry: https://cloud.docker.com
-    tags:
-      - latest
-    secrets: [ docker_username, docker_password ]
+      tags:
+        - latest
+    #secrets: [ docker_username, docker_password ]
     when:
       event: [push]  
   
