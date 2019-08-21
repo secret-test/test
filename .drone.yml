@@ -7,6 +7,8 @@ pipeline:
       - "coverage run --source=example-py-pytest/com/automationpanda/example example-py-pytest/tests/test*.py"
       - "coverage xml"
     image: frolvlad/alpine-python3
+    when:
+      event: [push]
   docker build push:
     image: plugins/docker
     repo: chashruti/drone1.0/drone-test
