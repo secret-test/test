@@ -10,10 +10,10 @@ pipeline:
   docker build push:
     image: plugins/docker
     repo: chashruti/drone1.0
-    registry: https://cloud.docker.com
+    #registry: https://cloud.docker.com
     tags:
       - latest
-    secrets: [ docker_username, docker_password ]
+    #secrets: [ docker_username, docker_password ]
     when:
       event: [push]  
   
