@@ -7,5 +7,14 @@ pipeline:
       - "coverage run --source=example-py-pytest/com/automationpanda/example example-py-pytest/tests/test*.py"
       - "coverage xml"
     image: frolvlad/alpine-python3
+  docker build push:
+    image: plugins/docker
+    repo: chashruti/drone1.0
+    registry: https://cloud.docker.com
+    tags:
+      - latest
+    secrets: [ docker_username, docker_password ]
+    when:
+      event: [push]  
   
 
